@@ -24,15 +24,19 @@ const Home: NextPage = () => {
     sqlFile && formData.append("sqllite_file", sqlFile);
 
     try {
-      response = await axios.post("/api/jsonConvert", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      response = await axios.post(
+        "https://kobo-highlights-backend.herokuapp.com/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       console.log(response.data);
     } catch (err: any) {
       // TODO proper error action
-      console.log(err.response.data);
+      console.log(err);
     }
   };
   return (
