@@ -17,6 +17,8 @@ const Home: NextPage = () => {
 
     // ERROR HANDLING
 
+    console.log(process.env.API_URL);
+
     let response;
 
     const formData = new FormData();
@@ -24,15 +26,11 @@ const Home: NextPage = () => {
     sqlFile && formData.append("sqllite_file", sqlFile);
 
     try {
-      response = await axios.post(
-        "https://kobo-highlights-backend.herokuapp.com/",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      response = await axios.post(process.env.API_URL as string, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       console.log(response.data);
     } catch (err: any) {
       // TODO proper error action
@@ -48,12 +46,7 @@ const Home: NextPage = () => {
       </Head>
 
       <div>
-        <form
-          action="/profile"
-          method="post"
-          encType="multipart/form-data"
-          onSubmit={onFormSubmit}
-        >
+        <form onSubmit={onFormSubmit}>
           <input
             type="file"
             name="sqllite_file"
