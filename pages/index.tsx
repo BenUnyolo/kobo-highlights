@@ -39,8 +39,6 @@ const Home: NextPage = () => {
       console.log(response.data);
 
       setServerData(response.data);
-
-      console.log(csvData);
     } catch (err: any) {
       // TODO proper error action
       console.log(err);

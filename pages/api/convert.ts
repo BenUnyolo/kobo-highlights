@@ -30,6 +30,8 @@ apiRoute.post(async (req: NextApiRequest, res: NextApiResponse) => {
   // console.log(req.file.buffer);
 
   const SQL = await initSqlJs({});
+  // FIXME fix this error
+  // @ts-ignore
   const db = new SQL.Database(req.file.buffer);
 
   const stmt = db.prepare(`SELECT
