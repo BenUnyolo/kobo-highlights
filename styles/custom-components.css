@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 font-semibold rounded-xl drop-shadow border-0 bg-red-800 text-white hover:bg-red-100;
+  }
+}

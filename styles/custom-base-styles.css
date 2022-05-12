@@ -1,0 +1,17 @@
+@tailwind base;
+
+* {
+  font-family: "Karla", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  @apply bg-red-800;
+}
+
+h1 {
+  @apply font-black;
+  font-family: "Vesper Libre", serif;
+}

@@ -1,6 +1,7 @@
 // config from https://nextjs.org/learn/basics/assets-metadata-css/styling-tips
 module.exports = {
   plugins: [
+    "tailwindcss/nesting",
     "tailwindcss",
     "postcss-flexbugs-fixes",
     [

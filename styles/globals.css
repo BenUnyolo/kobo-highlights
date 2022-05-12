@@ -1,7 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap"); */
 
-html,
-body {
-}
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Vesper+Libre:wght@900&display=swap");
+
+@import "./custom-base-styles.css";
+
+@import "./custom-components.css";
+
+@import "./custom-utilities.css";
