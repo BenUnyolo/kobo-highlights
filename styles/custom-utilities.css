@@ -1,1 +1,16 @@
 @tailwind utilities;
+
+@layer utilities {
+  .transition-max-height {
+    transition-property: max-height;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .icon-mr {
+    @apply mr-2;
+  }
+
+  .standard-transition {
+    @apply duration-700 transition-all;
+  }
+}

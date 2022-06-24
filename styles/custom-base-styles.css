@@ -1,17 +1,23 @@
 @tailwind base;
 
-* {
-  font-family: "Karla", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer base {
+  * {
+    font-family: "Karla", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-html,
-body {
-  @apply bg-red-800;
-}
+  html,
+  body {
+    @apply bg-red-800 text-stone-900;
+  }
 
-h1 {
-  @apply font-black;
-  font-family: "Vesper Libre", serif;
+  h1 {
+    @apply font-black;
+    font-family: "Vesper Libre", serif;
+  }
+
+  label {
+    @apply text-xl;
+  }
 }
