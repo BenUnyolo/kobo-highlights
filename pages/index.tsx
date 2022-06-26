@@ -7,9 +7,9 @@ import Dropzone from "components/home/dropzone";
 import sqliteInstructions from "content/home/sqliteInstructions";
 import { errorSupportMessages } from "content/home/errorSupportMessages";
 
-import HelpIcon from "assets/icons/HelpFilledSvg";
-import ConvertOutlineSvg from "assets/icons/ConvertOutlineSvg";
-import DownloadOutlineSvg from "assets/icons/DownloadOutlineSvg";
+import HelpIcon from "assets/icons/helpFilledSvg";
+import ConvertOutlineSvg from "assets/icons/convertOutlineSvg";
+import DownloadOutlineSvg from "assets/icons/downloadOutlineSvg";
 
 const Home: NextPage = () => {
   const [sqlFile, setSqlFile] = useState<File>();

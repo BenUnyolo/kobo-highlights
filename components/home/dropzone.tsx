@@ -1,9 +1,9 @@
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-import AddOutlineSvg from "assets/icons/AddOutlineSvg";
-import CheckmarkOutlineSvg from "assets/icons/CheckmarkOutlineSvg";
-import ResetOutlineSvg from "assets/icons/ResetOutlineSvg";
+import AddOutlineSvg from "assets/icons/addOutlineSvg";
+import CheckmarkOutlineSvg from "assets/icons/checkmarkOutlineSvg";
+import ResetOutlineSvg from "assets/icons/resetOutlineSvg";
 
 type DropzoneProps = {
   onDrop: (acceptedFiles: File[]) => void;
