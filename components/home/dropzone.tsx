@@ -18,23 +18,19 @@ const Dropzone = ({ onDrop, fileInState }: DropzoneProps) => {
 
   const { getRootProps, getInputProps, open } = useDropzone({
     onDrop,
+    noClick: true,
     accept: {
       "application/vnd.sqlite3": [".sqlite"],
       "application/x-sqlite3": [".sqlite"],
     },
     maxFiles: 1,
   });
-  // TODO: go through and check all "invisible" things are aria-hidden
-
-  // fileInState = false;
-
-  // TODO: file added showing up after reset
 
   return (
     <div className="flex w-full mt-4">
       <div
         className={`flex items-center standard-transition font-semibold overflow-hidden whitespace-nowrap text-xl flex-1 ${
-          fileInState ? "max-w-[1000px]" : "max-w-0 invisible"
+          fileInState ? "max-w-[1000px] visible" : "max-w-0 invisible"
         }`}
       >
         <CheckmarkOutlineSvg width="22px" height="22px" className="icon-mr" />

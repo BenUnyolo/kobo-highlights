@@ -2,7 +2,6 @@
 
 @layer components {
   .btn {
-    /* @apply text-center text-xl px-4 py-2 uppercase rounded-md drop-shadow border-0 bg-red-800 text-white hover:bg-red-100; */
-    @apply text-center inline-flex items-center justify-center text-xl px-4 py-2 font-semibold rounded-md drop-shadow border-0 bg-red-800 text-white hover:bg-red-100;
+    @apply text-center duration-300 inline-flex items-center justify-center text-xl px-4 py-2 font-semibold rounded-md drop-shadow border-0 bg-red-800 text-white transition-all hover:bg-stone-900 disabled:hover:bg-red-800;
   }
 }

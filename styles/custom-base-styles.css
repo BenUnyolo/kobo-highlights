@@ -17,6 +17,22 @@
     font-family: "Vesper Libre", serif;
   }
 
+  /* a {
+    @apply transition-all duration-500 underline underline-offset-2 hover:no-underline;
+  } */
+  a {
+    @apply inline-block;
+
+    &::after {
+      @apply w-full h-[2px] -mt-[2px] block bg-current opacity-50 transition-all duration-500;
+      content: "";
+    }
+
+    &:hover::after {
+      @apply w-0;
+    }
+  }
+
   label {
     @apply text-xl;
   }
