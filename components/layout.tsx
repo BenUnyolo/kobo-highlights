@@ -26,7 +26,7 @@ const Layout = ({ children, fullWidth, smallHeader }: LayoutProps) => {
           <Link href="/">
             <a className="border-0 undo-a">
               <h1
-                className={`text-white drop-shadow-xl text-5xl sm:text-7xl ${
+                className={`text-white drop-shadow-xl text-5xl font-black sm:text-7xl ${
                   smallHeader ? "5xl sm:text-5xl" : ""
                 }`}
               >
