@@ -93,134 +93,111 @@ const Home: NextPage = () => {
   };
   return (
     <>
-      <Head>
-        <title>Kobo Highlights Converter</title>
-        <meta
-          name="description"
-          content="Convert your Kobo highlights and annotations to CSV format so you can open them in many apps, including Excel and word processors!"
-        />
-        <link rel="manifest" href="/manifest.json" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-      </Head>
-
-      <div className="flex flex-col justify-center w-full min-h-screen px-2 py-4 md:px-6">
-        <h1 className="text-white drop-shadow-xl text-5xl sm:text-7xl">
-          Kobo
-          <br />
-          Highlights
-          <br />
-          Converter
-        </h1>
-        {/* <button onClick={onFakeDataLoad} className="btn bg-blue-600">
+      {/* <button onClick={onFakeDataLoad} className="btn bg-blue-600">
           fake data load
         </button> */}
-        {/* BOX */}
-        <div className="max-w-md p-6 bg-white rounded-xl shadow-xl shadow-red-900">
-          <h2 className="text-2xl font-medium">
-            Convert your Kobo highlights to CSV.
-          </h2>
-          <div className="">
-            <form onSubmit={onFormSubmit}>
-              <div
-                className={`standard-transition ${
-                  !!serverData
-                    ? "max-h-0 overflow-hidden opacity-0 invisible"
-                    : "max-h-[1000px] opacity-100 visible"
-                }`}
-              >
-                <div className="mt-4">
-                  <label htmlFor="sqllite_file" className="leading-relaxed">
-                    Upload your KoboReader.sqlite file{" "}
-                    <button
-                      className="ml-1"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setHelpVisible((prevState) => !prevState);
-                      }}
-                    >
-                      <span className="sr-only">
-                        How to find your KoboReader.sqlite file.
-                      </span>
-                      <HelpIcon
-                        height="100%"
-                        width="22px"
-                        className="inline-block"
-                      />
-                    </button>
-                  </label>
-                  {/* finding file help */}
-                  <div
-                    className={`transition-all duration-1000 overflow-hidden ${
-                      helpVisible
-                        ? "max-h-[2000px] opacity-100 visible"
-                        : "max-h-0 opacity-0 invisible"
-                    }`}
-                    aria-hidden={!helpVisible}
-                  >
-                    <div className="py-3 px-4 text-stone-600">
-                      <strong className="pb-2">
-                        Finding your KoboReader.sqlite file:
-                      </strong>
-                      <ol className="list-decimal list-inside leading-snug space-y-2">
-                        {sqliteInstructions.map((instruction, index) => (
-                          <li key={index}>{instruction}</li>
-                        ))}
-                      </ol>
-                    </div>
-                  </div>
-                  {/* input */}
-                  <Dropzone onDrop={onDrop} fileInState={!!sqlFile} />
-                  {errorMessage && (
-                    <p className="text-red-600 leading-snug mt-2">
-                      {errorMessage}
-                    </p>
-                  )}
-                </div>
-              </div>
-              {!serverData ? (
-                // TODO: play around with left aligned buttons |convert           ->|
-                // TODO: Convert button only shows once compatible file has been added? - maybe we don't need the file added text if so
-                // redo / pick a different file could then be text rather than a button
-                <button
-                  type="submit"
-                  className="block w-full mt-4 btn"
-                  disabled={!sqlFile}
-                >
-                  <ConvertOutlineSvg
-                    width="22px"
-                    height="22px"
-                    className={isConverting ? "animate-spin" : ""}
-                  />{" "}
-                  Convert
-                </button>
-              ) : (
-                <CSVLink
-                  data={serverData}
-                  filename="kobo_highlights.csv"
-                  className="w-full mt-4 btn"
-                >
-                  <DownloadOutlineSvg
-                    width="22px"
-                    height="22px"
-                    className="icon-mr"
-                  />
-                  Download
-                </CSVLink>
-              )}
-            </form>
-          </div>
+      {/* BOX */}
+      <h2 className="text-2xl font-medium">
+        Convert your Kobo highlights to CSV.
+      </h2>
+      <div className="">
+        <form onSubmit={onFormSubmit}>
           <div
-            className={`standard-transition delay-300 text-center text-sm ${
-              !serverData
-                ? "max-h-0 opacity-0 invisible"
+            className={`standard-transition ${
+              !!serverData
+                ? "max-h-0 overflow-hidden opacity-0 invisible"
                 : "max-h-[1000px] opacity-100 visible"
             }`}
           >
-            <button onClick={onReset} className="mt-2">
-              Reset
-            </button>
+            <div className="mt-4">
+              <label htmlFor="sqllite_file" className="leading-relaxed">
+                Upload your KoboReader.sqlite file{" "}
+                <button
+                  className="ml-1"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setHelpVisible((prevState) => !prevState);
+                  }}
+                >
+                  <span className="sr-only">
+                    How to find your KoboReader.sqlite file.
+                  </span>
+                  <HelpIcon
+                    height="100%"
+                    width="22px"
+                    className="inline-block"
+                  />
+                </button>
+              </label>
+              {/* finding file help */}
+              <div
+                className={`transition-all duration-1000 overflow-hidden ${
+                  helpVisible
+                    ? "max-h-[2000px] opacity-100 visible"
+                    : "max-h-0 opacity-0 invisible"
+                }`}
+                aria-hidden={!helpVisible}
+              >
+                <div className="py-3 px-4 text-stone-600">
+                  <strong className="pb-2">
+                    Finding your KoboReader.sqlite file:
+                  </strong>
+                  <ol className="list-decimal list-inside leading-snug space-y-2">
+                    {sqliteInstructions.map((instruction, index) => (
+                      <li key={index}>{instruction}</li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+              {/* input */}
+              <Dropzone onDrop={onDrop} fileInState={!!sqlFile} />
+              {errorMessage && (
+                <p className="text-red-600 leading-snug mt-2">{errorMessage}</p>
+              )}
+            </div>
           </div>
-        </div>
+          {!serverData ? (
+            // TODO: play around with left aligned buttons |convert           ->|
+            // TODO: Convert button only shows once compatible file has been added? - maybe we don't need the file added text if so
+            // redo / pick a different file could then be text rather than a button
+            <button
+              type="submit"
+              className="block w-full mt-4 btn"
+              disabled={!sqlFile}
+            >
+              <ConvertOutlineSvg
+                width="22px"
+                height="22px"
+                className={isConverting ? "animate-spin" : ""}
+              />{" "}
+              Convert
+            </button>
+          ) : (
+            <CSVLink
+              data={serverData}
+              filename="kobo_highlights.csv"
+              className="w-full mt-4 btn undo-a"
+            >
+              <DownloadOutlineSvg
+                width="22px"
+                height="22px"
+                className="icon-mr"
+              />
+              Download
+            </CSVLink>
+          )}
+        </form>
+      </div>
+      <div
+        className={`standard-transition delay-300 text-center text-sm ${
+          !serverData
+            ? "max-h-0 opacity-0 invisible"
+            : "max-h-[1000px] opacity-100 visible"
+        }`}
+      >
+        <button onClick={onReset} className="mt-2">
+          Reset
+        </button>
       </div>
     </>
   );

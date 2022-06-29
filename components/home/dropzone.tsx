@@ -11,11 +11,6 @@ type DropzoneProps = {
 };
 
 const Dropzone = ({ onDrop, fileInState }: DropzoneProps) => {
-  // const onDrop = useCallback((acceptedFiles) => {
-  //   console.log(acceptedFiles);
-  //   // Do something with the files
-  // }, []);
-
   const { getRootProps, getInputProps, open } = useDropzone({
     onDrop,
     noClick: true,

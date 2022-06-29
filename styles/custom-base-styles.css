@@ -13,8 +13,19 @@
   }
 
   h1 {
-    @apply font-black;
     font-family: "Vesper Libre", serif;
+  }
+
+  h2 {
+    @apply text-2xl font-medium;
+  }
+
+  h3 {
+    @apply text-xl font-medium;
+  }
+
+  p {
+    @apply my-3;
   }
 
   /* a {
@@ -30,6 +41,12 @@
 
     &:hover::after {
       @apply w-0;
+    }
+
+    &.undo-a {
+      &::after {
+        content: none;
+      }
     }
   }
 
